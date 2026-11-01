@@ -13,6 +13,10 @@ A Chrome extension that detects the song playing in your browser and shows its l
 
 Lyrics come from [LRCLIB](https://lrclib.net), a free community lyrics database (**source 1**). If LRCLIB is unreachable, you can switch to [lyrics.ovh](https://lyrics.ovh), a free open-source lyrics API (**source 2**). Both are free and need no account or API key.
 
+<p align="center">
+  <img src="repo/tool_ss.png" alt="Lyrics Side Panel next to YouTube, showing synced lyrics for R U Mine? by Arctic Monkeys" width="800">
+</p>
+
 ## Requirements
 
 Google Chrome **114 or newer** (check at `chrome://settings/help`). Other Chromium browsers with Side Panel support may work but are untested.
@@ -21,7 +25,7 @@ Google Chrome **114 or newer** (check at `chrome://settings/help`). Other Chromi
 
 This extension is not on the Chrome Web Store, so you load it manually (takes about a minute).
 
-1. Download this repository: click the green **Code** button on GitHub, then **Download ZIP**, and unzip it. (Or run `git clone <repo-url>`.)
+1. Download this repository: click the green **Code** button on GitHub, then **Download ZIP**, and unzip it. (Or run `git clone https://github.com/robuno/lyrics-side-card-extension`.)
 2. In Chrome, type `chrome://extensions` in the address bar.
 3. Turn on the **Developer mode** toggle in the top right.
 4. Click **Load unpacked**.
