@@ -1,4 +1,4 @@
-# Lyrics Side Panel
+# Lyrics Side Panel Chrome Extension
 
 A Chrome extension that detects the song playing in your browser and shows its lyrics in Chrome's **Side Panel**, so you can keep browsing other tabs while the lyrics stay next to you. If time-synced lyrics are available, they scroll along with the song and the current line is highlighted.
 
