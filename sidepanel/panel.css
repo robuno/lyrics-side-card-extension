@@ -1,0 +1,242 @@
+:root {
+  color-scheme: dark;
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --border: #2e2e2e;
+  --fg: #f2f2f2;
+  --muted: #9a9a9a;
+  --dim: rgba(255, 255, 255, 0.42);
+  --accent: #9b7bff;
+  --lyrics-size: 18px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+  font: 14px/1.5 system-ui, sans-serif;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ---------- Header: track info, controls, search ---------- */
+
+#header {
+  flex: none;
+  padding: 16px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+#track {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+#artwork {
+  width: 64px;
+  height: 64px;
+  flex: none;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.meta {
+  min-width: 0;
+}
+
+#title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.3;
+  overflow-wrap: anywhere;
+}
+
+#artist,
+#progress {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+#progress {
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+#controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+#offset-value {
+  min-width: 3.4em;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+button {
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 9px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+button:hover:not(:disabled) {
+  border-color: #4a4a4a;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.seg[aria-pressed="true"],
+#search-toggle[aria-expanded="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+#search {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+#search input {
+  flex: 1;
+  min-width: 0;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+  font: inherit;
+  font-size: 13px;
+}
+
+#search-status {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+#results {
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+  max-height: 35vh;
+  overflow-y: auto;
+}
+
+#results button {
+  display: block;
+  width: 100%;
+  margin-bottom: 4px;
+  padding: 6px 8px;
+  text-align: left;
+}
+
+.result-name {
+  display: block;
+  font-size: 13px;
+}
+
+.result-info {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* ---------- Lyrics ---------- */
+
+#scroller {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 20px;
+}
+
+.status {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 30vh;
+}
+
+#lyrics-status p {
+  margin: 0 0 12px;
+}
+
+#lyrics {
+  padding: 20px 0 40vh;
+}
+
+/* Extra space above so the first lines can be centered too. */
+#lyrics.synced {
+  padding-top: 35vh;
+}
+
+.line {
+  margin: 0 0 0.6em;
+  font-size: var(--lyrics-size);
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.synced .line {
+  color: var(--dim);
+  transition: color 0.25s;
+}
+
+.synced .line.active {
+  color: var(--fg);
+}
+
+/* ---------- Lyrics source 2 (backup) ---------- */
+
+#source-label {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #3a2f12;
+  color: #f0c46a;
+  font-size: 12px;
+  cursor: help;
+}
+
+#controls.backup #offset-value {
+  opacity: 0.4;
+}
+
+#lyrics-status button + button {
+  margin-left: 6px;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Lyrics</title>
+  <link rel="stylesheet" href="panel.css">
+</head>
+<body>
+  <header id="header" hidden>
+    <section id="track">
+      <img id="artwork" alt="">
+      <div class="meta">
+        <h1 id="title"></h1>
+        <p id="artist"></p>
+        <p id="progress"></p>
+      </div>
+    </section>
+
+    <nav id="controls">
+      <div class="group" role="group" aria-label="Lyrics mode">
+        <button id="mode-synced" type="button" class="seg">Synced</button>
+        <button id="mode-plain" type="button" class="seg">Plain</button>
+      </div>
+      <div class="group" role="group" aria-label="Time offset">
+        <button id="offset-down" type="button" title="Lyrics later (−0.5 s)">−0.5s</button>
+        <span id="offset-value" title="Time offset"></span>
+        <button id="offset-up" type="button" title="Lyrics sooner (+0.5 s)">+0.5s</button>
+      </div>
+      <div class="group" role="group" aria-label="Font size">
+        <button id="font-down" type="button" title="Smaller text">A−</button>
+        <button id="font-up" type="button" title="Larger text">A+</button>
+      </div>
+      <button id="search-toggle" type="button" title="Search lyrics manually" aria-expanded="false">Search</button>
+      <div id="source-box" class="group" hidden>
+        <span id="source-label" title="lyrics.ovh (backup source, plain lyrics only)">Lyrics source 2</span>
+        <button id="use-source-1" type="button" title="Switch back to LRCLIB (source 1) and try again">Use source 1</button>
+      </div>
+    </nav>
+
+    <form id="search" hidden>
+      <input id="search-title" placeholder="Title" autocomplete="off">
+      <input id="search-artist" placeholder="Artist" autocomplete="off">
+      <button type="submit">Go</button>
+    </form>
+    <p id="search-status" hidden></p>
+    <ul id="results" hidden></ul>
+  </header>
+
+  <main id="scroller">
+    <p id="waiting" class="status">Waiting for music…</p>
+    <section id="lyrics-status" class="status" hidden>
+      <p id="lyrics-message"></p>
+      <button id="use-source-2" type="button" hidden>Search source 2</button>
+      <button id="retry" type="button" hidden>Retry</button>
+    </section>
+    <div id="lyrics" hidden></div>
+  </main>
+
+  <script type="module" src="panel.js"></script>
+</body>
+</html>
